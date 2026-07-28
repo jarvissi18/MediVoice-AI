@@ -52,7 +52,7 @@ export default function Settings() {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="h-[calc(100vh-90px)] overflow-y-auto space-y-8 pr-2">
       {/* Header */}
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">

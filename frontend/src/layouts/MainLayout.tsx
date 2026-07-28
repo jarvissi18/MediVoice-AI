@@ -4,40 +4,29 @@ import Sidebar from "../components/layout/Sidebar";
 
 export default function MainLayout() {
   return (
-    <div className="flex min-h-screen bg-slate-50">
-
-      {/* Fixed Sidebar */}
-
-      <div className="fixed left-0 top-0 z-40 h-screen w-72">
+    <div className="flex h-screen overflow-hidden bg-slate-50">
+      {/* Sidebar */}
+      <aside className="fixed left-0 top-0 z-40 h-screen w-72">
         <Sidebar />
-      </div>
+      </aside>
 
-      {/* Content */}
-
-      <div className="ml-72 flex min-h-screen flex-1 flex-col">
-
+      {/* Right Side */}
+      <div className="ml-72 flex h-screen flex-1 flex-col overflow-hidden">
         {/* Navbar */}
+        <header className="shrink-0">
+          <Navbar />
+        </header>
 
-        <Navbar />
-
-        {/* Main */}
-
-        <main className="flex-1 overflow-y-auto bg-slate-50">
-
-          <div className="mx-auto max-w-[1700px] p-8 lg:p-10">
-
-            <div className="page-enter">
-
+        {/* Page */}
+        <main className="flex-1 overflow-hidden bg-slate-50">
+          <div className="h-full p-8 lg:p-10">
+            {/* IMPORTANT */}
+            <div className="h-full">
               <Outlet />
-
             </div>
-
           </div>
-
         </main>
-
       </div>
-
     </div>
   );
 }

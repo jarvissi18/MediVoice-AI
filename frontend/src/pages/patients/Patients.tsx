@@ -89,11 +89,11 @@ export default function Patients() {
   }
 
   return (
-    <div className="space-y-6 p-8">
+    <div className="flex h-full flex-col gap-6">
 
       {/* Header */}
 
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex shrink-0 flex-col gap-4 md:flex-row md:items-center md:justify-between">
 
         <div>
           <h1 className="text-3xl font-bold text-gray-800">
@@ -105,15 +105,13 @@ export default function Patients() {
           </p>
         </div>
 
-        <AddPatientButton
-          onClick={handleAddPatient}
-        />
+        <AddPatientButton onClick={handleAddPatient} />
 
       </div>
 
       {/* Search */}
 
-      <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg">
+      <div className="shrink-0 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
 
         <PatientSearch
           value={search}
@@ -122,9 +120,9 @@ export default function Patients() {
 
       </div>
 
-        {/* Loading */}
+      {/* Loading */}
 
-        {loading && (
+      {loading && (
         <LoadingSpinner
           text="Loading patient records..."
         />
@@ -141,7 +139,7 @@ export default function Patients() {
       {/* Table */}
 
       {!loading && !error && (
-        <div className="rounded-2xl bg-white p-5 shadow-sm">
+        <div className="min-h-0 flex-1 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
 
           <PatientTable
             patients={filteredPatients}

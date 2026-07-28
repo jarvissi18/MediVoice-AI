@@ -77,7 +77,7 @@ export default function Analytics() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="h-[calc(100vh-90px)] overflow-y-auto space-y-8 pr-2">
 
       {/* ================= HEADER ================= */}
 

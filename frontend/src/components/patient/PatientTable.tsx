@@ -14,56 +14,60 @@ export default function PatientTable({
 }: Props) {
   if (patients.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white py-16 shadow-sm">
-        <div className="mb-4 text-5xl">🩺</div>
+      <div className="flex h-full items-center justify-center">
+        <div className="text-center">
+          <div className="mb-3 text-5xl">🩺</div>
 
-        <h3 className="text-lg font-semibold text-gray-700">
-          No Patients Found
-        </h3>
+          <h3 className="text-lg font-semibold text-slate-700">
+            No Patients Found
+          </h3>
 
-        <p className="mt-2 text-sm text-gray-500">
-          Try changing your search or add a new patient.
-        </p>
+          <p className="mt-2 text-sm text-slate-500">
+            Add a patient or change the search keyword.
+          </p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+    <div className="flex h-full flex-col">
 
-      <div className="overflow-x-auto">
+      {/* Only this area scrolls */}
 
-        <table className="min-w-full">
+      <div className="min-h-0 flex-1 overflow-auto">
 
-          <thead className="bg-slate-100">
+        <table className="min-w-full border-collapse">
 
-            <tr className="text-sm font-semibold uppercase tracking-wide text-slate-700">
+          <thead className="sticky top-0 z-20 bg-slate-100 shadow-sm">
 
-              <th className="px-5 py-4 text-left">
+            <tr>
+
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Name
               </th>
 
-              <th className="px-5 py-4 text-left">
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Village
               </th>
 
-              <th className="px-5 py-4 text-left">
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Age
               </th>
 
-              <th className="px-5 py-4 text-left">
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Gender
               </th>
 
-              <th className="px-5 py-4 text-left">
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Disease
               </th>
 
-              <th className="px-5 py-4 text-left">
+              <th className="px-5 py-4 text-left text-sm font-semibold">
                 Mobile
               </th>
 
-              <th className="px-5 py-4 text-center">
+              <th className="px-5 py-4 text-center text-sm font-semibold">
                 Actions
               </th>
 
@@ -71,7 +75,7 @@ export default function PatientTable({
 
           </thead>
 
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-slate-100 bg-white">
 
             {patients.map((patient) => (
               <PatientRow

@@ -25,7 +25,7 @@ const menuItems = (role: string) => [
   ...(role === "Administrator"
     ? [
         {
-          title: "Users",
+          title: "Staff",
           icon: Users,
           path: "/users",
         },
