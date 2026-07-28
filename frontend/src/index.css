@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+/* ===========================
+   GLOBAL
+=========================== */
+
+html {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef2f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===========================
+   PAGE ANIMATION
+=========================== */
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageFade .45s ease;
+}
+
+/* ===========================
+   FADE
+=========================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn .30s ease;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+@keyframes modalPop {
+
+  0% {
+    opacity: 0;
+    transform: scale(.96) translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+}
+
+.animate-modalPop {
+  animation: modalPop .35s ease;
+}
+
+/* ===========================
+   FLOAT CARD
+=========================== */
+
+.dashboard-card {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, .08);
+}
+
+/* ===========================
+   GLASS
+=========================== */
+
+.glass {
+
+  backdrop-filter: blur(16px);
+
+  background: rgba(255,255,255,.75);
+
+  border: 1px solid rgba(255,255,255,.45);
+
+}
+
+/* ===========================
+   SHADOWS
+=========================== */
+
+.shadow-soft {
+  box-shadow:
+    0 8px 30px rgba(15,23,42,.06);
+}
+
+.shadow-premium {
+  box-shadow:
+    0 12px 40px rgba(15,23,42,.08);
+}
+
+/* ===========================
+   GRADIENT
+=========================== */
+
+.blue-gradient {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563EB,
+      #4F46E5
+    );
+
+}
+
+.green-gradient {
+
+  background:
+    linear-gradient(
+      135deg,
+      #22C55E,
+      #16A34A
+    );
+
+}
+
+.orange-gradient {
+
+  background:
+    linear-gradient(
+      135deg,
+      #F59E0B,
+      #EA580C
+    );
+
+}
+
+/* ==========================================
+   FLOATING ANIMATION
+========================================== */
+
+@keyframes floating {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+.animate-floating{
+  animation:floating 6s ease-in-out infinite;
+}
+
+/* ==========================================
+   GRADIENT ANIMATION
+========================================== */
+
+@keyframes gradientShift{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+.gradient-animated{
+
+background-size:200% 200%;
+
+animation:gradientShift 12s ease infinite;
+
+}
+
+/* =====================================
+   HEARTBEAT LINE
+===================================== */
+
+.heartbeat-line {
+  position: relative;
+  overflow: hidden;
+  height: 2px;
+  background: rgba(255,255,255,.15);
+  border-radius: 999px;
+}
+
+.heartbeat-line::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+
+  height: 100%;
+
+  left: -180px;
+
+  background: linear-gradient(
+      90deg,
+      transparent,
+      #67e8f9,
+      white,
+      #67e8f9,
+      transparent
+  );
+
+  animation: heartbeatMove 3.5s linear infinite;
+}
+
+@keyframes heartbeatMove{
+
+0%{
+left:-180px;
+}
+
+100%{
+left:110%;
+}
+
+}
+
+.btn-glow{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn-glow::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transition:.8s;
+
+}
+
+.btn-glow:hover::before{
+
+left:140%;
+
+}
+
+html,
+body,
+#root{
+
+height:100%;
+
+overflow:hidden;
+
+}
+
+body{
+
+margin:0;
+
+background:#F5F9FF;
+
+}
+
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}
